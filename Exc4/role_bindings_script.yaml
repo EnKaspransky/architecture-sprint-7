@@ -1,0 +1,45 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-role-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: admin-user
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: admin-role
+  apiGroup: ""
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: r-role-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: r-user
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: r-role
+  apiGroup: ""
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rw-role-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: rw-user
+    apiGroup: ""
+roleRef:
+  kind: Role
+  name: rw-role
+  apiGroup: ""
